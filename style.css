@@ -4,6 +4,43 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root{
+    --color-text: #000;
+    --background-color: #fff;
+    --background-color2: #f2f2f2;
+
+}
+#darkTg{
+    display: none;
+}
+body{
+    background: var(--background-color);
+    color: var(--color-text);
+    transition: 0.5s ease-in-out background, 0.5s ease-in-out color;
+}
+
+#darkTg:checked + main {
+    --color-text:#fff;
+    --background-color: #000;
+    --background-color2: #222;
+
+    background: var(--background-color);
+    color: var(--color-text);
+    transition: 0.5s ease-in-out background, 0.5s ease-in-out color;
+}
+#darkTg:checked + main .darkTgLabel::after{
+    content: 'is On';
+}
+
+.darkTgLabel{
+    cursor: pointer;
+    color: rgb(77, 160, 255);
+    font-size: 10px;
+    
+}
+.darkTgLabel::after{
+    content: 'is Off';
+}
 .header{
     min-height: 100vh;
     width: 100%;
@@ -142,7 +179,7 @@ p{
 }
 .course-col{
     flex-basis: 31%;
-    background: #fff3f3;
+    background: var(--background-color2);
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
@@ -155,7 +192,7 @@ h3{
     margin: 10px 0;
 }
 .course-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px 0px rgba(51, 103, 245, 0.2);
 }
 @media(max-width:700px){
 .row{
@@ -248,7 +285,7 @@ h3{
     border-radius: 10px;    
     margin-bottom: 5%;
     text-align: left;
-    background: #fff3f3;
+    background: var(--background-color2);
     padding: 25px;
     cursor: pointer;
     display: flex; 
@@ -337,6 +374,7 @@ h3{
 }
 .about-col img{
     width: 100%;
+    border-radius: 10px;
 }
 .about-col h1{
     padding: 0;
